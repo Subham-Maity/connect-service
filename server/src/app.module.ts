@@ -3,9 +3,8 @@ import { LoggerMiddleware } from './logger';
 import { ChatModule } from './chat/chat.module';
 import { RedisModule } from './redis';
 import { ConfigModule } from '@nestjs/config';
-import { AuthService } from './auth.service';
-import { AuthController } from './auth.controller';
 import { AuthModule } from './auth/auth.module';
+
 
 @Module({
   imports: [
@@ -15,8 +14,8 @@ import { AuthModule } from './auth/auth.module';
   }),
   AuthModule,
   ],
-  providers: [AuthService],
-  controllers: [AuthController,]
+  providers: [],
+  controllers: []
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
